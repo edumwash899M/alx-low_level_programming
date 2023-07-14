@@ -1,0 +1,14 @@
+
+#!/bin/bash
+sitive_or_negative.c:12:2: error: implicit declaration of function ‘srand’ [-Werror=implicit-function-declaration]
+   12 |  srand(time(0));
+      |  ^~~~~
+0-positive_or_negative.c:13:6: error: implicit declaration of function ‘Rand’ [-Werror=implicit-function-declaration]
+   13 |  n = Rand() -RAND_MAX / 2;
+      |      ^~~~
+0-positive_or_negative.c:13:14: error: ‘RAND_MAX’ undeclared (first use in this function)
+   13 |  n = Rand() -RAND_MAX / 2;
+      |              ^~~~~~~~
+0-positive_or_negative.c:13:14: note: each undeclared identifier is reported only once for each function it appears in
+cc1: all warnings being treated as errors
+
