@@ -1,9 +1,13 @@
 #include <stdio.h>
 
 /**
-* main - causes an infinite loop
-* Return: 0
-*/
+ * main - Entry point of the program
+ *
+ * This function prints a message to indicate an infinite loop, then
+ * avoids the loop by commenting out the problematic code.
+ *
+ * Return: Always 0 (success)
+ */
 
 int main(void)
 {
@@ -13,11 +17,13 @@ printf("Infinite loop incoming :(\n");
 
 i = 0;
 /**
-*while (i < 10)
-*{
-*	putchar(i)
-*}
+* while (i < 10)
+* {
+*     putchar(i);
+*     i++;
+* }
 */
+
 printf("Infinite loop avoided! \\o/\n");
 
 return (0);
