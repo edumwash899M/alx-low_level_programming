@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "linked_lists.h"
+#include "lists.h"
 
 /**
  * display_linked_list - displays all elements in a linked list
@@ -7,20 +7,21 @@
  *
  * Returns: the count of printed nodes
  */
-size_t display_linked_list(const linked_list_t *list)
+size_t print_list(const list_t *h)
 {
-    size_t count = 0;
+	size_t s = 0;
 
-    while (list)
-    {
-        if (!list->data)
-            printf("[0] (nil)\n");
-        else
-            printf("[%u] %s\n", list->length, list->data);
-        list = list->next;
-        count++;
-    }
+	while (h)
+	{
+		if (!h->str)
+			printf("[0] (nil)\n");
+		else
+			printf("[%u] %s\n", h->len, h->str);
+		h = h->next;
+		s++;
+	}
 
-    return count;
+	return (s);
+
+
 }
-

@@ -1,5 +1,5 @@
-#ifndef CUSTOM_LISTS
-#define CUSTOM_LISTS
+#ifndef LISTS_H
+#define LISTS_H
 
 /**
  * struct custom_list_node - node for a singly linked list
@@ -10,18 +10,18 @@
  * Description: node structure for a singly linked list
  * used in the context of a project
  */
-typedef struct custom_list_node
+typedef struct list_s
 {
-    char *str;
-    unsigned int length;
-    struct custom_list_node *next_node;
-} custom_list_t;
+	char *str;
+	unsigned int len;
+	struct list_s *next;
+} list_t;
 
-size_t print_custom_list(const custom_list_t *node);
-size_t custom_list_length(const custom_list_t *node);
-custom_list_t *add_custom_node(custom_list_t **head, const char *string);
-custom_list_t *add_custom_node_end(custom_list_t **head, const char *string);
-void free_custom_list(custom_list_t *head);
+size_t print_list(const list_t *h);
+size_t list_len(const list_t *h);
+list_t *add_node(list_t **head, const char *str);
+list_t *add_node_end(list_t **head, const char *str);
+void free_list(list_t *head);
 
 #endif
 
