@@ -9,34 +9,34 @@
  *
  * Result: returns the memory location of the new element, or NULL upon failure
  */
-list_t *insert_end_node(list_t **start_ptr, const char *content)
+list_t *add_node_end(list_t **head, const char *str)
 {
-    list_t *new_node;
-    list_t *temp_node = *start_ptr;
-    unsigned int content_length = 0;
+	list_t *new;
+	list_t *temp = *head;
+	unsigned int len = 0;
 
-    while (content[content_length])
-        content_length++;
+	while (str[len])
+		len++;
 
-    new_node = malloc(sizeof(list_t));
-    if (!new_node)
-        return (NULL);
+	new = malloc(sizeof(list_t));
+	if (!new)
+		return (NULL);
 
-    new_node->str = strdup(content);
-    new_node->len = content_length;
-    new_node->next = NULL;
+	new->str = strdup(str);
+	new->len = len;
+	new->next = NULL;
 
-    if (*start_ptr == NULL)
-    {
-        *start_ptr = new_node;
-        return (new_node);
-    }
+	if (*head == NULL)
+	{
+		*head = new;
+		return (new);
+	}
 
-    while (temp_node->next)
-        temp_node = temp_node->next;
+	while (temp->next)
+		temp = temp->next;
 
-    temp_node->next = new_node;
+	temp->next = new;
 
-    return (new_node);
+	return (new);
 }
 
