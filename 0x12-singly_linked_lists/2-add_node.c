@@ -9,23 +9,22 @@
  *
  * Response: the pointer to the freshly created element, or NULL if it doesn't succeed
  */
-list_t *insert_front(list_t **first, const char *content)
+list_t *add_node(list_t **head, const char *str)
 {
-	list_t *fresh;
-	unsigned int length = 0;
+	list_t *new;
+	unsigned int len = 0;
 
-	while (content[length])
-		length++;
+	while (str[len])
+		len++;
 
-	fresh = malloc(sizeof(list_t));
-	if (!fresh)
+	new = malloc(sizeof(list_t));
+	if (!new)
 		return (NULL);
 
-	fresh->content = strdup(content);
-	fresh->length = length;
-	fresh->next = (*first);
-	(*first) = fresh;
+	new->str = strdup(str);
+	new->len = len;
+	new->next = (*head);
+	(*head) = new;
 
-	return (*first);
+	return (*head);
 }
-
